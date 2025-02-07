@@ -1,7 +1,7 @@
 # Copyright 2019 Lorenzo Battistini @ TAKOBI
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from odoo import fields, models
+from odoo import api, fields, models
 
 
 class AbstractWizard(models.AbstractModel):
@@ -35,6 +35,19 @@ class AbstractWizard(models.AbstractModel):
         string="Company",
     )
     label_text_limit = fields.Integer(default=40)
+    # Hack inverse to force save columns options
+    column_ids = fields.Many2many(
+        comodel_name="account.financial.report.column",
+        compute="_compute_column_ids",
+        inverse=lambda self: self,
+    )
+
+    @api.depends("company_id")
+    def _compute_column_ids(self):
+        for wiz in self:
+            wiz.column_ids = self.env["account.financial.report.column"].search(
+                [("res_model", "=", wiz._name)]
+            )
 
     def button_export_html(self):
         self.ensure_one()

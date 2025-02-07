@@ -17,6 +17,7 @@
     "website": "https://github.com/OCA/account-financial-reporting",
     "depends": ["account", "date_range", "report_xlsx"],
     "data": [
+        "data/report_column_data.xml",
         "security/ir.model.access.csv",
         "security/security.xml",
         "wizard/aged_partner_balance_wizard_view.xml",

@@ -163,6 +163,6 @@ class AgedPartnerBalanceReport(models.AbstractModel):
 
     def _get_report_values(self, docids, data):
         wizard = self.env[data["wizard_name"]].browse(data["wizard_id"])
-        return {
-            "limit_text": wizard._limit_text,
-        }
+        res = {f"{c.expression_label}_visible": c.is_visible for c in wizard.column_ids}
+        res["limit_text"] = wizard._limit_text
+        return res
