@@ -102,27 +102,12 @@
                                 context="{'skip_search_count': 1}"
                             />
                         </page>
-                        <page name="format" string="Format">
-                            <group>
-                                <field name="label_text_limit" />
-                            </group>
-                        </page>
                         <page name="columns" string="Columns">
                             <field
                                 name="column_ids"
                                 context="{'default_res_name': 'general.ledger.report.wizard'}"
                                 widget="one2many"
-                            >
-                                <tree>
-                                    <field name="name" readonly="1" />
-                                    <field
-                                        name="expression_label"
-                                        optional="hide"
-                                        readonly="1"
-                                    />
-                                    <field name="is_visible" widget="boolean_toggle" />
-                                </tree>
-                            </field>
+                            />
                         </page>
                     </notebook>
                 </div>
