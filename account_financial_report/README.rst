@@ -38,6 +38,9 @@ Invoicing / Reporting / OCA accounting reports.
 - VAT Report
 - Journal Ledger
 
+It is possible to select the columns to show and limit the size of some of them from the
+columns page.
+
 Currently General ledger, Trial Balance and Open Items are fully compatible with a foreign
 currency set up in account in order to display balances. Moreover, any foreign
 currency used in account move lines is properly shown.
@@ -94,9 +97,17 @@ Known issues / Roadmap
 * It would be nice to have in reports a column indicating the
   state of the entries when the option "All Entries" is selected
   in "Target Moves" field in a wizard
+* Adapt reports so that the order of the columns displayed is dynamic
+* Remove duplicated options to show columns (it has not been made in a stable version so
+  as not to generate confusion in users)
 
 Changelog
 =========
+
+15.0.3.2.3 (2025-02-17)
+~~~~~~~~~~~~~~~~~~~~~~~
+
+* Added the option to select columns to display and the ability to limit the width of the text
 
 11.0.2.5.0 (2019-04-26)
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -138,6 +149,7 @@ Authors
 * initOS GmbH
 * redCOR AG
 * ForgeFlow
+* Tecnativa
 
 Contributors
 ~~~~~~~~~~~~
@@ -169,6 +181,7 @@ Contributors
   * Alexandre D. Díaz
   * Víctor Martínez
   * Carolina Fernandez
+  * Carlos Dauden
 
 * `Sygel <https://www.sygel.es>`__:
 
